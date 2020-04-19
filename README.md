@@ -1,3 +1,4 @@
+# Tanveer Saleem
 # Sprint Challenge: Express and Node.js - Projects & Actions
 
 ## Description
@@ -40,13 +41,27 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+       Routing  [Can define different route handler for endpoints]
+       Middleware 
+
 - [ ] Describe Middleware?
+       
+       By using middleware we can add extra functionality to our application. Middleware provide a way to extend the features provided by the Express framework.
+       Middleware functions can get the request and response objects, operate on them, and (when specified) trigger some action
 
 - [ ] Describe a Resource?
 
+      A resource is being a piece of data, like a user, order, product etc.  
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+      API will return a status code like '200 ok' and success message or send  reqested data
+
 - [ ] How can we partition our application into sub-applications?
+
+      We can partition our application by keeping API seperate from server.
+      Why we have to keep separate Express app and server? Express app encapsulates your API logical, which is your data abstraction. This is where you should keep up your DB logic or data models. The server should be differently handled as its sole responsibility is to keep the app/website running
+
 
 ## Minimum Viable Product
 

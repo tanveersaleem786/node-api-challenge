@@ -16,7 +16,7 @@ Go code!
 const express = require('express');
 const cors = require('cors');
 const projectRouter = require('./projects/projectRouter.js')
-//const actionRouter = require('./actions/actionRouter.js')
+const actionRouter = require('./actions/actionRouter.js')
 
 const port = 9090;
 const server = express();
@@ -24,7 +24,7 @@ const server = express();
 server.use(express.json());
 server.use(cors());
 server.use('/api/projects', projectRouter);
-//server.use('/api/actions', actionRouter);
+server.use('/api/actions', actionRouter);
 
 server.use((req, res) => {
     res.status(404).json({message: "Route was not found"})

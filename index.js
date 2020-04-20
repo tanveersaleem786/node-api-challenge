@@ -12,3 +12,31 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
+
+const express = require('express');
+const cors = require('cors');
+const projectRouter = require('./projects/projectRouter.js')
+//const actionRouter = require('./actions/actionRouter.js')
+
+const port = 9090;
+const server = express();
+
+server.use(express.json());
+server.use(cors());
+server.use('/api/projects', projectRouter);
+//server.use('/api/actions', actionRouter);
+
+server.use((req, res) => {
+    res.status(404).json({message: "Route was not found"})
+})
+
+server.use((err, req, res, next) => {
+    console.log(err)
+    res.status(500).json({error: "Something went wrong"})
+})
+
+server.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`)
+})
+
+
